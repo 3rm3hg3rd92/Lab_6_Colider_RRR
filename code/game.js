@@ -229,7 +229,7 @@ Level.prototype.animate = function(step, keys) {
   // Ensure each is maximum 100 milliseconds 
   while (step > 0) {
     var thisStep = Math.min(step, maxStep);
-	    this.actors.forEach(funtion(actor){
+	    this.actors.forEach(function(actor){
             actor.act(thisStep, this, keys);
 		}, this);
    // Do this by looping across the step size, subtracing either the
