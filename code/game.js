@@ -311,9 +311,10 @@ Player.prototype.act = function(step, level, keys) {
 
 Level.prototype.playerTouched = function(type, actor) {
     if (type == 'coin'){
-		this.actors = this.actors.filter(function(other)
-		    return other != actor
-	});
+		this.actors = this.actors.filter(function(other){
+		    return other != actor;
+	    });
+	}	
   }; 
 
 // Arrow key codes for readibility
