@@ -212,7 +212,7 @@ Level.prototype.obstacleAt = function(pos, size) {
 	}
 };
 
-Level.prototype.actorAt = funciton(actor){
+Level.prototype.actorAt = funciton(actor) {
 	for (var i=0; i<this.actors.length; i++){
 		var other = this.actors[i];
 		if (other != actor && 
