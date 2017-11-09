@@ -312,7 +312,7 @@ Player.prototype.act = function(step, level, keys) {
 Level.prototype.playerTouched = function(type, actor) {
     if (type == 'coin'){
 		this.actors = this.actors.filter(function(other)
-		    retrun other != actor;
+		    return other != actor;
 	});
   }; 
 
