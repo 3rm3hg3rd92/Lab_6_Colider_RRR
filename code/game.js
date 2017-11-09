@@ -237,7 +237,12 @@ Player.prototype.moveY = function(step, level, keys) {
 	  else
 		  this.speed.y = 0;
 	  
-     }else {
+     }
+	 else if (obstacle == 'lava')
+	 {
+		 console.log("You dead")
+	 }
+	 else {
 		 this.pos = newPos;
 	 }    
   
