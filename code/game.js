@@ -28,9 +28,6 @@ function Level(plan) {
 	  var Actor = actorChars[ch];
 	  if (Actor)
 		  this.actors.push(new Actor(new Vector(x,y), ch));
-      //if (ch==='@')
-        // Create a new player at that grid position.
-        //this.player = new Player(new Vector(x, y));
       else if (ch == "x")
         fieldType = "wall";
       // Because there is a third case (space ' '), use an "else if" instead of "else"
@@ -45,7 +42,7 @@ function Level(plan) {
     // Push the entire row onto the array of rows.
     this.grid.push(gridLine);
   }
-  this.player = thi.actor.filter(function(actor){
+  this.player = this.actor.filter(function(actor){
 	  return actor.type == "player";
   })[0];
 }
