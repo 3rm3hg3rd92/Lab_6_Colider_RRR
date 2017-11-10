@@ -1,6 +1,7 @@
 var actorChars = {
 	'@': Player,
-    'o': Coin	
+    'o': Coin,
+    '$': Dollar	
 };
 function Level(plan) {
   // Use the length of a single row to set the width of the level
@@ -52,6 +53,13 @@ function Coin(pos){
     this.wobble = Math.random() * Math.PI * 2;	
 }
 Coin.prototype.type = 'coin';
+
+function Dollar(pos){
+	this.basePos = this.pos = pos.plus(new Vector(0.3,0.1));
+    this.size = new Vector(0.7, 0.7);
+    this.wobble = Math.random() * Math.PI * 2;	
+}
+Dollar.prototype.type = 'dollar';
 
 function Vector(x, y) {
   this.x = x; this.y = y;
@@ -241,6 +249,16 @@ Coin.prototype.act = function(step){
 	var wobblePos = Math.sin(this.wobble) * wobbleDist;
 	this.pos = this.basePos.plus(new Vector(0, wobblePos));
 	
+};
+
+var wobbleSpeed = 7;
+var wobbleDist = 0.06;
+Dollar.prototype.act = function(step){
+	
+	this.wobble += step * wobbleSpeed;
+	var wobblePos = Math.sin(this.wobble) * wobbleDist;
+	this.pos = this.basePos.plus(new Vector(0, wobblePos));
+
 };
 
 var maxStep = 0.05;
